@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/navbar';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Counter from './components/counter';
+import Timer from './components/timer';
+import Weather from './components/weather';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (   
+  <>
+    <Router> 
+
+    <Navbar/>
+<Routes>
+<Route path="/" element={<Weather />} />
+<Route path="/counter" element={<Counter />} />
+<Route path="/timer" element={<Timer />} />
+</Routes>
+
+    </Router>  
+    </>
   );
 }
 
