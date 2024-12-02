@@ -8,6 +8,7 @@ function Weather() {
     const [city, setCity] = useState("");
     const [storedCity, setStoredCity] = useLocalStorage("lastCity", "");
     const fetchWeatherData = useWeatherData();
+
     const { setWeatherData } = useContext(WeatherContext);
 
     const handleSearch = async () => {
